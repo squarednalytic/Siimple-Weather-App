@@ -1,9 +1,9 @@
 async function getWeather() {
     const cityInput = document.getElementById("cityInput");
     const weatherResult = document.getElementById("weatherResult");
-    const apiKey = "3f02cf5a7ab539f97389fd56357d2b08"; // your API key
+    const apiKey = "3f02cf5a7ab539f97389fd56357d2b08"; 
 
-    const city = cityInput.value.trim(); // remove extra spaces
+    const city = cityInput.value.trim(); 
     if (!city) {
         weatherResult.innerHTML = "<p>Please enter a city name.</p>";
         return;
@@ -16,7 +16,7 @@ async function getWeather() {
 
         const data = await response.json();
 
-        // Check if API returns an error code (e.g. 404)
+    
         if (data.cod !== 200) {
             weatherResult.innerHTML = `<p style="color: yellow;">${data.message || "City not found"}</p>`;
             return;
@@ -35,3 +35,4 @@ async function getWeather() {
         weatherResult.innerHTML = `<p style="color: yellow;">Unable to fetch weather data. Please try again later.</p>`;
     }
 }
+
